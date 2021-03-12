@@ -260,7 +260,10 @@ RCT_REMAP_METHOD(getCallInvite,
                  /*
                   * Save the device token after successfully registered.
                   */
-                 [[NSUserDefaults standardUserDefaults] setObject:cachedDeviceToken forKey:kCachedDeviceToken];
+               /*
+               * Application not required to recieve call. So no need to save device token.
+               */
+                 //[[NSUserDefaults standardUserDefaults] setObject:cachedDeviceToken forKey:kCachedDeviceToken];
                  [self sendEventWithName:@"deviceReady" body:nil];
              }
          }];
